@@ -36,10 +36,20 @@ IncludeTemplateLangFile(__FILE__);
             <div class="inner-wrap">
                 <div class="logo-block"><a href="" class="logo">Мебельный магазин</a>
                 </div>
-                <div class="main-phone-block">
-                    <a href="tel:84952128506" class="phone">8 (495) 212-85-06</a>
-                    <div class="shedule">время работы с 9-00 до 18-00</div>
-                </div>
+                <? $work_start = $APPLICATION->GetProperty("ВРЕМЯ НАЧАЛА РАБОТЫ");
+                $work_end = $APPLICATION->GetProperty("ВРЕМЯ ЗАВЕРШЕНИЯ РАБОТЫ");
+                $APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	Array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+        "PATH" => "/include/work-time.php",
+        "START_TIME" => $work_start,
+        "END_TIME" => $work_end
+	)
+);?>
                 <div class="actions-block">
                     <form action="/" class="main-frm-search">
                         <input type="text" placeholder="Поиск">
@@ -142,14 +152,17 @@ IncludeTemplateLangFile(__FILE__);
         <!-- page -->
         <div class="page">
 
+
+					<? $CurPage = $APPLICATION -> GetCurPage(false);
+					
+					
+					
+					if($CurPage == "/site_go/"): ?>
 <!-- content box -->
 <div class="content-box">
                 <!-- content -->
                 <div class="content">
                     <div class="cnt">
-                    
-                   
-
 
                    <p>«Мебельная компания» осуществляет производство мебели на высококлассном оборудовании с применением минимальной доли ручного труда, что позволяет обеспечить высокое качество нашей продукции. Налажен производственный процесс как массового и индивидуального характера, что с одной стороны позволяет обеспечить постоянную номенклатуру изделий и индивидуальный подход – с другой.
 						</p>
@@ -306,5 +319,20 @@ IncludeTemplateLangFile(__FILE__);
                     </div>
                 </div>
                 <!-- /content -->
+
+					<? else: ?>
+
+					<!-- content box -->
+<div class="content-box">
+                <!-- content -->
+                <div class="content">
+                    <div class="cnt">
+                    
+                    <header>
+                            <h1><?$APPLICATION->ShowTitle();?></h1>
+                        </header> 
+
+
+					<? endif; ?> 
 
 
