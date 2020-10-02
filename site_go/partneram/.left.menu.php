@@ -1,12 +1,6 @@
 <?
 $aMenuLinks = Array(
-	Array(
-		"Условия сотрудничества", 
-		"/site_go/partneram/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
+	
 	Array(
 		"Как стать партнером", 
 		"/site_go/partneram/kak-stat-partnerom.php", 

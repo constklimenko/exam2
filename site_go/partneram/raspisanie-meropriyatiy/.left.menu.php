@@ -13,6 +13,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"", 
+		"/site_go/partneram/raspisanie-meropriyatiy/arkhiv.php", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>

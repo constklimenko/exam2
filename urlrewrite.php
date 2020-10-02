@@ -8,7 +8,7 @@ $arUrlRewrite=array (
     'PATH' => '/site_go/services/index.php',
     'SORT' => 100,
   ),
-  4 => 
+  6 => 
   array (
     'CONDITION' => '#^/site_go/products/#',
     'RULE' => '',
